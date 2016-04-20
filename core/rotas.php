@@ -1,5 +1,5 @@
-<?php 
+<?php
 
-$rota["premio"] = "premio.php";
-$rota["contato"] = "contato.php";
-$rota["default"] = "home.php";
+$rota["premio"] = "premio";
+$rota["onibus"] = "contato";
+$rota["default"] = "home";

@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 /**
  * Estado da aplicação
  * Se estiver em desenvolvimento, exibe qualquer erro que apareça
@@ -29,7 +28,9 @@ header("Access-Control-Request-Methods: POST, GET");
 /**
  * Requires/Inclusões de outros arquivos
  */
-require('core/Roteador.php');
+	require_once( 'core/constantes.php' );
+	require( PATH_CORE.'load.php' );
+	require( PATH_CORE.'Roteador.php' );
 
 /**
  * Iniciando nossa Aplicação
@@ -38,5 +39,5 @@ try {
 	$rota = new Roteador( isset($_GET['uri']) ? $_GET['uri'] : NULL );
 	$rota->mapaRotas();
 } catch (Exception $e) {
-	
+
 }
