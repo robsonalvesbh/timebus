@@ -1,6 +1,7 @@
 <?php
 
-class Premio {
+class Premio
+{
 
 	public function __construct( $metodo )
 	{
@@ -11,11 +12,18 @@ class Premio {
 
 	public function index()
 	{
-		echo "YEAP";
+
+		Requisicao::resposta( array('message' => Constantes::STATUS_403) );
+
 	}
 
 	public function get()
 	{
 		echo "deu certo";
+	}
+
+	public function post()
+	{
+		echo "POST123";
 	}
 }

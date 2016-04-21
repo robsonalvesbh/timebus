@@ -1,55 +1,32 @@
 <?php
+/**
+ * Classe Roteadora, responsavel pelo roteamendo das requisições recebidas
+ * Herda as rotas da classe Rotas
+ */
+class Roteador extends rotas
+{
 
-class Roteador {
+	private $caminho = array();
 
-	private $rotas = array();
-	public $caminho = array();
-
-	public function __construct( $uri ) {
-		$this->getAndSetRotas();
-
-		if (is_null($uri)) {
+	public function __construct( $uri )
+	{
+		if (is_null($uri))
 			$this->rotear('default');
-		}
 		else
-		{
 			$this->rotear($uri);
-		}
 	}
 
-	private function getAndSetRotas() {
-
-		if ( file_exists( PATH_CORE.'rotas.php' ) )
+	public function rotear( $uri )
+	{
+		if ( $this->validaRota($uri) )
 		{
-			require_once( PATH_CORE.'rotas.php' );
-		}
-
-		if (isset($rota) && is_array($rota))
-		{
-			$this->rotas = $rota;
-		}
-	}
-
-	public function mapaRotas() {
-		echo "<hr> <pre>";
-		print_r($this->rotas);
-	}
-
-	public function rotear( $uri ) {
-
-		if ( array_key_exists($uri, $this->rotas) ) {
-			$this->caminho = explode('/', $this->rotas[$uri]);
+			$this->caminho = explode('/', $this->$uri);
 			new $this->caminho[0]( isset($this->caminho[1]) ? $this->caminho[1] : 'index' );
 		}
 		else
 		{
-			echo "URL Inválida!";
+			return Requisicao::resposta( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
 		}
 	}
 
-	function dd($value) {
-		echo "<pre>";
-		print_r($value);
-		echo "</pre>";
-	}
 }

@@ -4,17 +4,18 @@
  * Se estiver em desenvolvimento, exibe qualquer erro que apareça
  * Se estiver em producao, esconde os erros
  */
-define(ESTADOAPLICACAO, 'desenvolvimento');
+define("ESTADOAPLICACAO", "desenvolvimento");
 
 switch (ESTADOAPLICACAO)
 {
 	case 'desenvolvimento':
-		error_reporting(-1);
-		ini_set('display_errors', E_ALL);
+		ini_set('display_errors', true);
+		ini_set('display_startup_errors', true);
+		error_reporting(E_ALL);
 	break;
 
 	case 'producao':
-		ini_set('display_errors', 0);
+		ini_set('display_errors', false);
 	break;
 }
 
@@ -28,16 +29,11 @@ header("Access-Control-Request-Methods: POST, GET");
 /**
  * Requires/Inclusões de outros arquivos
  */
-	require_once( 'core/constantes.php' );
-	require( PATH_CORE.'load.php' );
-	require( PATH_CORE.'Roteador.php' );
+require_once( 'core/constantes.php' );
+require_once( Constantes::PATH_CORE.'load.php' );
 
 /**
  * Iniciando nossa Aplicação
  */
-try {
-	$rota = new Roteador( isset($_GET['uri']) ? $_GET['uri'] : NULL );
-	$rota->mapaRotas();
-} catch (Exception $e) {
+new Roteador( isset($_GET['uri']) ? $_GET['uri'] : NULL );
 
-}
