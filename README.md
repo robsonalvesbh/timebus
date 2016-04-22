@@ -20,9 +20,9 @@ Como este é um problema real na cidade onde moramos, resolvemos abraçar este p
 
 > Após baixar ou clonar este repositorio para que ele funcione em seu `localhost`, dentro da pasta `core/`, altere o nome do arquivo *Constants_dev.php* para *Constants.php* e informe os seguintes dados:
 
-> const HOST 		= "";
-> const USER 		= "";
-> const PASSWORD = "";
-> const DATABASE = "";
+> *	const HOST 		= "";
+> *	const USER 		= "";
+> *	const PASSWORD = "";
+> *	const DATABASE = "";
 
-> Caso ainda não tenha a estrutura do banco em seu computador, efetue o download e [https://github.com/robsonalvesbh/POOSocialProject/blob/master/sql_criacao_database.sql](rode) em seu SGBD.
+> Caso ainda não tenha a estrutura do banco em seu computador, efetue o [https://github.com/robsonalvesbh/POOSocialProject/blob/master/sql_criacao_database.sql](download) e rode em seu SGBD.
