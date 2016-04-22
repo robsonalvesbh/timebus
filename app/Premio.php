@@ -1,6 +1,6 @@
 <?php
 
-class Premio
+class Premio extends Requisicao
 {
 
 	public function __construct( $metodo )
@@ -12,18 +12,17 @@ class Premio
 
 	public function index()
 	{
-
-		Requisicao::resposta( array('message' => Constantes::STATUS_403) );
-
+		Resposta::enviar( array('message' => Constantes::STATUS_403 . 'onibus') );
 	}
 
 	public function get()
 	{
-		echo "deu certo";
+		echo json_encode($_GET);exit;
 	}
 
 	public function post()
 	{
-		echo "POST123";
+
+		echo json_encode($_POST);exit;
 	}
 }
