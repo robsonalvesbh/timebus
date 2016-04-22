@@ -3,11 +3,17 @@
  * Classe Roteadora, responsavel pelo roteamendo das requisições recebidas
  * Herda as rotas da classe Rotas
  */
-class Roteador extends rotas
+class Roteador extends Rotas
 {
+	private $segmento = array();
+	private $class;
+	private $metodo;
 
-	private $caminho = array();
-
+	/**
+	 * Recebe a url passada na requisição e valida se ela tem algum parametro
+	 * para rotear, caso não tenha é roteado a rota default
+	 * @param [String] [$uri] Url passada na requisição após a url base
+	 */
 	public function __construct( $uri )
 	{
 		if (is_null($uri))
@@ -16,16 +22,39 @@ class Roteador extends rotas
 			$this->rotear($uri);
 	}
 
+	/**
+	 * Faz o roteamento da requisição estanciando o objeto
+	 * da classe que deverá ser chamada
+	 * @param [String] [$uri] Url passada na requisição após a url base
+	 */
 	public function rotear( $uri )
 	{
-		if ( $this->validaRota($uri) )
+		/**
+		 * Cada parametro da url é convertido em um valor para nosso array
+		 * Por exemplo, se na requisição vier 'onibus/3333'
+		 * O array segmento terá 2 valores 'onibus' e '3333'
+		 * @var [array] $segmento
+		 */
+		$this->segmento = explode('/', $uri);
+
+		/**
+		 * O primeiro parametro do segmento será a classe a ser estanciada
+		 * @var [String] será nossa classe
+		 */
+		$this->class  = $this->segmento[0];
+
+		if ( $this->validaRota($this->segmento[0]) )
 		{
-			$this->caminho = explode('/', $this->$uri);
-			new $this->caminho[0]( isset($this->caminho[1]) ? $this->caminho[1] : 'index' );
+			$rota = $this->{$this->segmento[0]};
+
+			$this->class   = ucfirst($rota[0]);
+			$this->metodo  = isset($rota[1]) ? $rota[1] : "index";
+
+			new $this->class ( $this->metodo, $this->segmento );
 		}
 		else
 		{
-			return Requisicao::resposta( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
+			Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
 		}
 	}
 

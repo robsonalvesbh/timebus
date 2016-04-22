@@ -7,13 +7,12 @@ class Rotas
 {
 	/**
 	 * O nome do atributo será a requisição esperada
-	 * E seu valor é a classe / metodo / id respectivamente
+	 * E seu valor é um arrayn onde o primeiro elemento é a classe
+	 * e o segundo elemento é o metodo que será chamado
 	 * @var string
 	 */
-	protected $post = "premio/post";
-	protected $premio = "premio";
-	protected $onibus = "contato";
-	protected $default = "premio";
+	protected $onibus		= [ "onibus" ];
+	protected $default 	= [ "premio"];
 
 	/**
 	 * Função que verifica se existe a rota recebida pela requisição
