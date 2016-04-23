@@ -2,6 +2,41 @@
 
 class OnibusDB extends BaseDB
 {
+   public function getOnibus( )
+   {
+      $dados = array();
+
+      $resultado = $this->db->query( '
+         SELECT *
+         FROM onibus
+      ' );
+
+      if ($resultado->num_rows != 0)
+      {
+         $dados = $this->filterDadosOnibus($resultado);
+      }
+
+      return $dados;
+   }
+
+   private function filterDadosOnibus( mysqli_result $result )
+   {
+      $dados = array();
+
+      while ($r = $result->fetch_object()) {
+         $dados[] = array_map("utf8_encode", array(
+            "linha" => $r->linha,
+            "origem" => $r->origem,
+            "destino" => $r->destino,
+            "municipio" => $r->municipio,
+            "estado" => $r->estado,
+            "empresa" => $r->empresa
+         ));
+      }
+
+      return $dados;
+   }
+
 	public function getHorarios( $linha )
 	{
 		$dados = array();
@@ -22,7 +57,7 @@ class OnibusDB extends BaseDB
 				WHERE h.onibus_id = "'.$dados['onibus_id'].'"
 			' );
 
-			$dados["horario"] = $this->filterHorarios($resultHorario);
+			$dados["horarios"] = $this->filterHorarios($resultHorario);
 
 			unset($dados['onibus_id']);
 		}

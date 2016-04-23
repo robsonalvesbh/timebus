@@ -7,9 +7,9 @@ class Onibus
 
 	public function __construct( $metodo, array $segmentos )
 	{
-		$this->db  = new OnibusDB();
+		$this->db = new OnibusDB();
 
-		$this->segmentos = $this->validaSegmento($segmentos);
+		$this->validaSegmento($segmentos);
 
 		if (method_exists($this, $metodo))
 			$this->$metodo();
@@ -17,24 +17,39 @@ class Onibus
 			return Resposta::enviar( array('status' => 500, 'mensagem' => Constantes::STATUS_500) );
 	}
 
-	public function index( )
+	public function pegaHorario( )
 	{
-		$result = $this->db->getHorarios( $this->segmentos[1] );
+		$resultado = $this->db->getHorarios( $this->segmentos[1] );
 
-		if (is_array($result) && empty($result))
+		if (is_array($resultado) && empty($resultado))
 			return Resposta::enviar( array('status' => 410, 'mensagem' => Constantes::STATUS_410) );
 		else
-			Resposta::enviar( array(
+			return Resposta::enviar( array(
 				'status' => 200,
 				'mensagem' => Constantes::STATUS_200,
-				'dados' => $result
+				'dados' => $resultado
 			) );
 	}
+
+   public function pegaOnibus( )
+   {
+      $resultado = $this->db->getOnibus( );
+
+      if (is_array($resultado) && empty($resultado))
+         return Resposta::enviar( array('status' => 410, 'mensagem' => Constantes::STATUS_410) );
+      else
+         return Resposta::enviar( array(
+            'status' => 200,
+            'mensagem' => Constantes::STATUS_200,
+            'total' => sizeof($resultado),
+            'dados' => $resultado
+         ) );
+   }
 
 	private function validaSegmento( $segmentos )
 	{
 		if (is_array($segmentos) && !empty($segmentos))
-			return $segmentos;
+			$this->segmentos = $segmentos;
 		else
 			return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
 	}
