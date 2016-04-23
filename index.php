@@ -9,8 +9,8 @@ define("ESTADOAPLICACAO", "desenvolvimento");
 switch (ESTADOAPLICACAO)
 {
 	case 'desenvolvimento':
-		ini_set('display_errors', true);
-		ini_set('display_startup_errors', true);
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
 		error_reporting(E_ALL);
 	break;
 
@@ -36,4 +36,5 @@ require_once( Constantes::PATH_CORE.'load.php' );
  * Iniciando nossa Aplicação
  */
 new Roteador( isset($_GET['uri']) ? $_GET['uri'] : NULL );
+
 

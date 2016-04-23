@@ -11,8 +11,7 @@ class Rotas
 	 * e o segundo elemento é o metodo que será chamado
 	 * @var string
 	 */
-	protected $onibus		= [ "onibus" ];
-	protected $default 	= [ "premio"];
+	protected $onibus		= array( "onibus" );
 
 	/**
 	 * Função que verifica se existe a rota recebida pela requisição

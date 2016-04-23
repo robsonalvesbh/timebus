@@ -2,20 +2,13 @@
 
 class BaseDB {
 
-	protected $conn;
+	protected $db;
 
-	public function connect () {
+	public function __construct () {
 		try {
-
-			$this->conn = new PDO ('
-				mysql:host=' + Constantes::HOST+';
-				dbname=' + Constantes::DATABASE+'',
-				Constantes::USER,
-				Constantes::PASSWORD
-			);
-
+			$this->db = new mysqli(Constantes::HOST, Constantes::USER, Constantes::PASSWORD, Constantes::DATABASE);
 		} catch (Exception $e) {
-			Resposta::enviar( array('status' => 300, 'mensagem' => Constantes::STATUS_500) );
+			return Resposta::enviar( array('status' => 500, 'mensagem' => Constantes::STATUS_500) );
 		}
 	}
 

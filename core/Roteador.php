@@ -6,7 +6,7 @@
 class Roteador extends Rotas
 {
 	private $segmento = array();
-	private $class;
+	private $classe;
 	private $metodo;
 
 	/**
@@ -16,10 +16,10 @@ class Roteador extends Rotas
 	 */
 	public function __construct( $uri )
 	{
-		if (is_null($uri))
-			$this->rotear('default');
-		else
+		if (!is_null($uri))
 			$this->rotear($uri);
+		else
+			return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
 	}
 
 	/**
@@ -41,20 +41,19 @@ class Roteador extends Rotas
 		 * O primeiro parametro do segmento será a classe a ser estanciada
 		 * @var [String] será nossa classe
 		 */
-		$this->class  = $this->segmento[0];
 
 		if ( $this->validaRota($this->segmento[0]) )
 		{
 			$rota = $this->{$this->segmento[0]};
-
-			$this->class   = ucfirst($rota[0]);
+			unset($this->segmento[0]); // remove o nome da classe
+			$this->classe  = ucfirst($rota[0]);
 			$this->metodo  = isset($rota[1]) ? $rota[1] : "index";
 
-			new $this->class ( $this->metodo, $this->segmento );
+			new $this->classe ( $this->metodo, $this->segmento );
 		}
 		else
 		{
-			Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
+			return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
 		}
 	}
 

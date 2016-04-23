@@ -17,7 +17,7 @@ spl_autoload_register(function ($class_name) {
 	else if ( file_exists( Constantes::PATH_OUTPUT . $class_name . '.php' ) )
 		require_once( Constantes::PATH_OUTPUT . $class_name . '.php' );
 	else {
-		Resposta::enviar( array('status' => 3, 'mensagem' => Constantes::STATUS_500) );
+		return Resposta::enviar( array('status' => 500, 'mensagem' => Constantes::STATUS_500) );
 		exit;
 	}
 });

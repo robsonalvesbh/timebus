@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Classe de resposta da requisição
+ * Classe de return return Resposta da requisição
  */
 class Resposta
 {
 	/**
-	 * Metodo estático que ecoa na tela a resposta em formato Json
+	 * Metodo estático que ecoa na tela a return return Resposta em formato Json
 	 * @param  array  $dados [dados de retorno]
 	 * @return [Json]        [Os dados de retorno em formato Json]
 	 */
@@ -16,6 +16,4 @@ class Resposta
 		echo json_encode($dados, JSON_UNESCAPED_UNICODE);
 		exit;
 	}
-
 }
-
