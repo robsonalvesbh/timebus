@@ -37,24 +37,12 @@ class Roteador extends Rotas
 		 */
 		$this->segmento = explode('/', $uri);
 
-		/**
-		 * O primeiro parametro do segmento será a classe a ser estanciada
-		 * @var [String] será nossa classe
-		 */
+		$rota = explode("/", $this->validaRota($uri));
 
-		if ( $this->validaRota($this->segmento[0]) )
-		{
-			$rota = $this->{$this->segmento[0]};
-			unset($this->segmento[0]); // remove o nome da classe
-			$this->classe  = ucfirst($rota[0]);
-			$this->metodo  = isset($rota[1]) ? $rota[1] : "index";
+		$this->classe  = ucfirst($rota[0]);
+		$this->metodo  = isset($rota[1]) ? $rota[1] : "index";
 
-			new $this->classe ( $this->metodo, $this->segmento );
-		}
-		else
-		{
-			return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
-		}
+		return new $this->classe ( $this->metodo, $this->segmento );
 	}
 
 }
