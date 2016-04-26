@@ -1,0 +1,24 @@
+{
+  "name": "AppBus",
+  "homepage": "https://github.com/robsonalvesbh/POOSocialProject",
+  "authors": [
+    "Robson Alves <robsonalves.dev@gmail.com>"
+  ],
+  "description": "Site do aplicativo appbus",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  },
+  "devDependencies": {
+    "angular-file-saver": "^1.1.1"
+  }
+}

@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<div ng-controller="MyCtrl">
+	<!-- Header -->
+	<section id="header" class="dark">
+		<header>
+			<div id="nav-icon">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			</div>
+			<h1><em><strong>AppBus</strong></em></h1>
+			<p>Todos os horários de onibus de sua cidade ao seu alcance.</p>
+		</header>
+		<footer>
+			<div class="content style4 featured">
+				<form action="">
+					<div class="container 100%">
+						<div class="row">
+							<div class="2u 12u(narrow)"></div>
+							<div class="8u 12u(narrow)">
+								<input type="text" list="onibus" placeholder="Informe aqui a linha de onibus, ex: 3333" ng-model="onibus">
+								<datalist id="onibus">
+									<option ng-repeat="b in bus" value="[[b.linha]] - [[b.origem]] / [[b.destino]]">
+								</datalist>
+							</div>
+						</div>
+					</div>
+				</form>
+				<br>
+				<a ng-show="onibus.length > 6" href="#first" class="button scrolly" ng-click="getBus()">Ver Horarios</a>
+				<a ng-show="onibus.length > 6" class="button scrolly" ng-click="download()">Fazer download</a>
+			</div>
+		</footer>
+	</section>
+
+		<!-- First -->
+		<section id="first" class="main">
+			<header ng-if="horarios.normal || horarios.sabado || horarios.feriado_domingo">
+				<div class="container 100&">
+					<div class="row 100%">
+						<div class="4u 12u(mobile)">
+							<h4><strong>Dias Úteis</strong><hr></h4>
+							<ul>
+								<li ng-repeat="h in horarios.normal">[[h.hora]] : [[h.minuto]]</li>
+							</ul>
+						</div>
+						<div class="4u 12u(mobile)">
+							<h4><strong>Sábados</strong><hr></h4>
+							<ul>
+								<li ng-repeat="h in horarios.sabado">[[h.hora]] : [[h.minuto]]</li>
+							</ul>
+						</div>
+						<div class="4u 12u(mobile)">
+							<h4><strong>Domingos e feriados</strong><hr></h4>
+							<ul>
+								<li ng-repeat="h in horarios.feriado_domingo">[[h.hora]] : [[h.minuto]]</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+		</section>
+
+	</div>
+
+	<!-- Fourth -->
+	<section id="fourth" class="main">
+		<header>
+			<div class="container">
+				<h2>Entre em contato conosco</h2>
+				<p>Em caso de dúvida, sugestão ou critica não deixe de mandar sua mensagem, estaremos respondendo o mais rápido possível.<br />
+				</div>
+			</header>
+			<div class="content style4 featured">
+				<div class="container 75%">
+					<form method="post" action="#">
+						<div class="row 50%">
+							<div class="6u 12u(mobile)"><input type="text" placeholder="Nome" /></div>
+							<div class="6u 12u(mobile)"><input type="text" placeholder="Email" /></div>
+						</div>
+						<div class="row 50%">
+							<div class="12u"><textarea name="message" placeholder="Mensagem"></textarea></div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<ul class="actions">
+									<li><input type="submit" class="button" value="Enviar Mensagem" /></li>
+									<li><input type="reset" class="button alt" value="Limpar formulário" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; 2016. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
