@@ -8,7 +8,7 @@ myApp.controller("MyCtrl", function($scope, $http)
    $scope.bus = [];
    $scope.horarios = [];
 
-   $http.get('http://localhost/Projetos/timebus/onibus')
+   $http.get('http://timebus.encontreumdoador.com.br/onibus')
    .success(function(response) {
       if (response.status == 200)
       {
@@ -21,7 +21,7 @@ myApp.controller("MyCtrl", function($scope, $http)
    $scope.getBus = function( ) {
       var linha = $scope.onibus.split(" - ");
 
-      $http.get('http://localhost/Projetos/timebus/onibus/'+ linha[0])
+      $http.get('http://timebus.encontreumdoador.com.br/onibus/'+ linha[0])
       .success(function(response) {
          if (response.status == 200)
          {
