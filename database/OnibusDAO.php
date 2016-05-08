@@ -1,6 +1,6 @@
 <?php
 
-class OnibusDB extends BaseDB
+class OnibusDAO extends BaseDAO
 {
    public function getOnibus( )
    {
@@ -23,7 +23,8 @@ class OnibusDB extends BaseDB
    {
       $dados = array();
 
-      while ($r = $result->fetch_object()) {
+      while ($r = $result->fetch_object())
+      {
          $dados[] = array_map("utf8_encode", array(
             "linha" => $r->linha,
             "origem" => $r->origem,
@@ -69,7 +70,8 @@ class OnibusDB extends BaseDB
 	{
 		$dados = array();
 
-		while ($r = $result->fetch_object()) {
+		while ($r = $result->fetch_object())
+		{
 			$dados["linha"] = $r->linha;
 			$dados["origem"] = $r->origem;
 			$dados["destino"] = $r->destino;
@@ -88,11 +90,20 @@ class OnibusDB extends BaseDB
 
 		while ($r = $result->fetch_object()) {
 			if ($r->normal)
-				$dados["normal"][] = array('hora' => $r->hora, 'minuto' => $r->minuto );
+				$dados["normal"][] = array(
+					'hora' => str_pad($r->hora, 2, "0", STR_PAD_LEFT),
+					'minuto' => str_pad($r->minuto, 2, "0", STR_PAD_RIGHT)
+				);
 			else if ($r->sabado)
-				$dados["sabado"][] = array('hora' => $r->hora, 'minuto' => $r->minuto );
+				$dados["sabado"][] = array(
+					'hora' => str_pad($r->hora, 2, "0", STR_PAD_LEFT),
+					'minuto' => str_pad($r->minuto, 2, "0", STR_PAD_RIGHT)
+				);
 			else if ($r->feriado_domingo)
-				$dados["feriado_domingo"][] = array('hora' => $r->hora, 'minuto' => $r->minuto );
+				$dados["feriado_domingo"][] = array(
+					'hora' => str_pad($r->hora, 2, "0", STR_PAD_LEFT),
+					'minuto' => str_pad($r->minuto, 2, "0", STR_PAD_RIGHT)
+				);
 		}
 		return $dados;
 	}

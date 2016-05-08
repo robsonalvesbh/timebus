@@ -12,8 +12,10 @@ class Rotas
 	 * @var string
 	 */
 	protected $rotas = array(
-      "onibus" => "onibus/pegaOnibus",
-      "onibus/:any" => "onibus/pegaHorario"
+      "onibus" 				=> "onibus/pegaTodosHorarios",
+      "onibus/:any" 			=> "onibus/pegaHorario",
+      "usuario/cadastrar" 	=> "usuario/cadastrar",
+      "usuario/logar" 		=> "usuario/logar"
    );
 
 	/**
@@ -26,16 +28,16 @@ class Rotas
       foreach ($this->rotas as $chave => $valor)
       {
          // Convertendo :any por .+ e :num por [0-9]+
-         $chave = str_replace(':any', '.+', str_replace(':num', '[0-9]+', $chave));
+         $chave = str_replace(":any", ".+", str_replace(":num", "[0-9]+", $chave));
 
          // validação da rota com regex
-         if (preg_match('#^'.$chave.'$#', $uri))
+         if (preg_match("#^".$chave."$#", $uri))
          {
            return $valor;
          }
       }
 
-      return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
+      return Resposta::enviar( array("status" => 400, "mensagem" => Constantes::STATUS_400) );
 	}
 
 }

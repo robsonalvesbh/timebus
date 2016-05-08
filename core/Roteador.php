@@ -5,9 +5,7 @@
  */
 class Roteador extends Rotas
 {
-	private $segmento = array();
-	private $classe;
-	private $metodo;
+	private $uri;
 
 	/**
 	 * Recebe a url passada na requisição e valida se ela tem algum parametro
@@ -17,9 +15,9 @@ class Roteador extends Rotas
 	public function __construct( $uri )
 	{
 		if (!is_null($uri))
-			$this->rotear($uri);
+			$this->uri = $uri;
 		else
-			return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
+			Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
 	}
 
 	/**
@@ -27,7 +25,7 @@ class Roteador extends Rotas
 	 * da classe que deverá ser chamada
 	 * @param [String] [$uri] Url passada na requisição após a url base
 	 */
-	public function rotear( $uri )
+	public function rotear( )
 	{
 		/**
 		 * Cada parametro da url é convertido em um valor para nosso array
@@ -35,14 +33,9 @@ class Roteador extends Rotas
 		 * O array segmento terá 2 valores 'onibus' e '3333'
 		 * @var [array] $segmento
 		 */
-		$this->segmento = explode('/', $uri);
-
-		$rota = explode("/", $this->validaRota($uri));
-
-		$this->classe  = ucfirst($rota[0]);
-		$this->metodo  = isset($rota[1]) ? $rota[1] : "index";
-
-		return new $this->classe ( $this->metodo, $this->segmento );
+		return new Requisicao (
+			$this->validaRota($this->uri),
+			$this->uri
+		);
 	}
-
 }

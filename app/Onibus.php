@@ -2,24 +2,16 @@
 
 class Onibus
 {
-	private $segmentos;
 	private $db;
 
-	public function __construct( $metodo, array $segmentos )
+	public function __construct( )
 	{
-		$this->db = new OnibusDB();
-
-		$this->validaSegmento($segmentos);
-
-		if (method_exists($this, $metodo))
-			$this->$metodo();
-		else
-			return Resposta::enviar( array('status' => 500, 'mensagem' => Constantes::STATUS_500) );
+		$this->db = new OnibusDAO();
 	}
 
-	public function pegaHorario( )
+	public function pegaHorario( $linha )
 	{
-		$resultado = $this->db->getHorarios( $this->segmentos[1] );
+		$resultado = $this->db->getHorarios( $linha );
 
 		if (is_array($resultado) && empty($resultado))
 			return Resposta::enviar( array('status' => 410, 'mensagem' => Constantes::STATUS_410) );
@@ -31,7 +23,7 @@ class Onibus
 			) );
 	}
 
-   public function pegaOnibus( )
+   public function pegaTodosHorarios( )
    {
       $resultado = $this->db->getOnibus( );
 
@@ -46,11 +38,4 @@ class Onibus
          ) );
    }
 
-	private function validaSegmento( $segmentos )
-	{
-		if (is_array($segmentos) && !empty($segmentos))
-			$this->segmentos = $segmentos;
-		else
-			return Resposta::enviar( array('status' => 400, 'mensagem' => Constantes::STATUS_400) );
-	}
 }

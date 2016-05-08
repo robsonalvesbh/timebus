@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteBase /Projetos/appBus/
+RewriteBase /Projetos/timebus/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
