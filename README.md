@@ -2,7 +2,7 @@
 
 Este projeto tem como objetivo melhorar o acesso da população (principalmente a de cidades mais afastadas de capitais) a informações de transportes público, como: Horários em dias úteis, feriados e finais de semana e muito mais.
 
-Estas informações são na maioria das vezes de fácil acesso a cidades próximas da capital, porém em cidades mais afastadas estas informações são mais escassas e as vezes é necessário entrar em contato com o terminal de ônibus para que seja possível consegui estas informações.Essa pesquisa se torna ainda mais difícil quando não se tem nenhuma informação sobre sobre a empresa responsável por tal linha e pelas diversas informações desatualizadas encontradas pela internet.
+Estas informações são na maioria das vezes de fácil acesso a cidades próximas da capital, porém em cidades mais afastadas estas informações são mais escassas e as vezes é necessário entrar em contato com o terminal de ônibus para que seja possível consegui estas informações. Essa pesquisa se torna ainda mais difícil quando não se tem nenhuma informação sobre sobre a empresa responsável por tal linha e pelas diversas informações desatualizadas encontradas pela internet.
 
 # O Projeto
 
