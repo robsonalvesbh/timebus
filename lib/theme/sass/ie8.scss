@@ -1,14 +1,83 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
+@import 'libs/skel';
 
 /*
-	Tessellate by HTML5 UP
+	Alpha by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 /* Basic */
+
+	pre, code {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
+
+/* Form */
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+		line-height: 3em;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"], {
+		opacity: 1;
+		z-index: auto;
+
+		& + label {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+
+		&.alt {
+			border: solid 2px _palette(border);
+		}
+	}
+
+/* Box */
+
+	.box {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+
+		.image {
+			&.featured {
+				margin: 2em 0;
+				width: 100%;
+			}
+		}
+	}
+
+/* Icon */
+
+	.icon {
+		&.major {
+			position: relative;
+			-ms-behavior: url('assets/js/ie/PIE.htc');
+		}
+	}
+
+/* Image */
 
 	.image {
 		position: relative;
@@ -20,55 +89,59 @@
 		}
 	}
 
-	.button {
-		position: relative;
-		-ms-behavior: url('assets/js/ie/PIE.htc');
-	}
+/* Header */
 
-/* Section/Article */
+	#header {
+		nav {
+			> ul {
+				> li {
+					a {
+						color: #fff;
+						display: inline-block;
+						text-decoration: none;
+						border: 0;
 
-	section > .last-child,
-	article > .last-child,
-	section.last-child,
-	article.last-child {
-		margin-bottom: 0;
-	}
-
-/* List */
-
-	ul.icons {
-		a {
-			position: relative;
-			-ms-behavior: url('assets/js/ie/PIE.htc');
-			border: solid 1px #ddd;
-		}
-	}
-
-/* Form */
-
-	form {
-		input.text,
-		select,
-		.select,
-		textarea {
-			position: relative;
-			-ms-behavior: url('assets/js/ie/PIE.htc');
-			border: solid 1px #ddd;
-			line-height: 1.25em;
-		}
-
-		select {
-			position: relative;
-
-			option {
-				color: #000;
+						&.icon {
+							&:before {
+								color: #fff;
+								margin-right: 0.5em;
+							}
+						}
+					}
+				}
 			}
 		}
 
-		.select {
-			select {
-				width: 100%;
+		&.alt {
+			color: #fff;
+
+			nav {
+				> ul {
+					> li {
+						a:not(.button) {
+							&.icon {
+								&:before {
+									color: rgba(255,255,255,0.75);
+								}
+							}
+						}
+
+						&.active {
+							a:not(.button) {
+								background-color: rgba(255,255,255,0.2);
+							}
+						}
+					}
+				}
 			}
+		}
+	}
+
+	.dropotron {
+		border: solid 1px _palette(border);
+
+		&.level-0 {
+			margin-top: 0;
 
 			&:before {
 				display: none;
@@ -76,60 +149,44 @@
 		}
 	}
 
-/* Button */
+/* Banner */
 
-	.button {
-		&.alt {
-			border: solid 1px #ddd;
-		}
-	}
-
-/* Feature Icon */
-
-	.feature-icon {
-		padding-bottom: 0;
-
-		&:before,
-		&:after {
-			display: none;
-		}
-
-		.icon {
-			position: relative;
-			-ms-behavior: url('assets/js/ie/PIE.htc');
-			background: #fff;
-
-			&:before {
-				font-size: 6em;
-				color: #3d3d3d;
-			}
-		}
-	}
-
-/* Header */
-
-	#header {
-		background-image: url('../../images/header.jpg');
-		background-size: cover;
-		background-position: auto;
-		background-repeat: no-repeat;
+	#banner {
+		background-attachment:	scroll;
+		background-image:		url('../../images/banner.jpg');
+		background-position:	auto;
+		background-repeat:		no-repeat;
+		background-size:		cover;
 		-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		.button {
+			border: solid 2px #fff;
+		}
 	}
 
-/* Main Sections */
+/* Main */
 
-	.main {
-		> .content {
-			&.style1 {
-				filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#412e4c, endColorstr=#a56365);
-			}
+	#main {
+		position: relative;
+		z-index: 1;
+	}
 
-			&.style2 {
-				filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#85505f, endColorstr=#384955);
-			}
+/* CTA */
 
-			&.style3 {
-				filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#2f394e, endColorstr=#5f796b);
-			}
+	#cta {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		select,
+		textarea {
+			background: _palette(accent2, bg);
+			border: solid 2px #fff;
+		}
+
+		.formerize-placeholder {
+			color: #fff !important;
 		}
 	}

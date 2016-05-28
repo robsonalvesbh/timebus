@@ -1,0 +1,69 @@
+---
+layout: default
+---
+<body>
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="contato.html">Contato</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<section id="main" class="container 50%">
+			<header ng-if="!user.nome">
+				<h2>Acesse sua conta</h2>
+				<p>[[user]]</p>
+				<p>[[user.hash_cliente]]</p>
+			</header>
+			<div class="box">
+				
+				<form method="post" ng-submit="logar()" ng-if="!user.nome">
+					<div class="row uniform 50%">
+						<div class="12u">
+							<input type="text" name="email" ng-model="email" placeholder="Email" />
+						</div>
+					</div>
+					<div class="row uniform 50%">
+						<div class="12u">
+							<input type="password" name="senha" ng-model="senha" placeholder="Senha" />
+						</div>
+					</div>
+					<div class="row uniform">
+						<div class="12u">
+							<ul class="actions align-center">
+								<li><input type="submit" value="Fazer login" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+				
+				<div class="row uniform" ng-if="user.nome">
+					<div class="12u" style="text-align: center">
+						<a href="index.html" class="button special">Voltar para a página principal</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+	</div>
