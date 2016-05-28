@@ -2,50 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4ed8a12-7b54-47cb-bb2b-2db15db3f5d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/images/banner.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/images/pic01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/images/pic02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/images/pic03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/images/pic04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/images/pic05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contato.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jsPDF/jspdf.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/theme/js/jquery.dropotron.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/theme/js/jquery.scrollgress.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/ie9.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/arrow.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/bgbl.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/bgtr.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/content-bg-cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/dark-arrow.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/ie/content-style1.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/ie/content-style2.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/css/images/ie/content-style3.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/js/jquery.scrolly.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/theme/sass/ie9.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/css/images/overlay.png" afterPath="$PROJECT_DIR$/lib/theme/css/images/overlay.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/lib/theme/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/footer.html" afterPath="$PROJECT_DIR$/_includes/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/head.html" afterPath="$PROJECT_DIR$/_includes/head.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/lib/theme/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/css/ie8.css" afterPath="$PROJECT_DIR$/lib/theme/css/ie8.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/css/main.css" afterPath="$PROJECT_DIR$/lib/theme/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/lib/theme/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/js/main.js" afterPath="$PROJECT_DIR$/lib/theme/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/sass/ie8.scss" afterPath="$PROJECT_DIR$/lib/theme/sass/ie8.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/sass/libs/_mixins.scss" afterPath="$PROJECT_DIR$/lib/theme/sass/libs/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/sass/libs/_vars.scss" afterPath="$PROJECT_DIR$/lib/theme/sass/libs/_vars.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/theme/sass/main.scss" afterPath="$PROJECT_DIR$/lib/theme/sass/main.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimeBus.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/schema_banco_de_dados.mwb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Onibus.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Requisicao.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Usuario.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/appUtil.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/Constantes_dev.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/Roteador.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/load.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/rotas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/BaseDAO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/OnibusDAO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/UsuarioDAO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/Resposta.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql_criacao_database.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="timebus_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +42,18 @@
     <favorites_list name="timebus_site" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,6 +66,7 @@
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/_site/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -184,24 +172,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464446486519</updated>
-      <workItem from="1464446489380" duration="6772000" />
+      <workItem from="1464446489380" duration="6936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6772000" />
+    <option name="totallyTimeSpent" value="6936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.204236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.204236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -324,6 +312,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
