@@ -1,5 +1,3 @@
 _site
-.sass-cache
-.jekyll-metadata
-gcore/Constantes.php
 .editorconfig
+_config.yml

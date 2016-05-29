@@ -17,8 +17,5 @@
   ],
   "dependencies": {
     "angular": "^1.5.5"
-  },
-  "devDependencies": {
-    "angular-file-saver": "^1.1.1"
   }
 }
