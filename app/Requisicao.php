@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Classe base de todas as requisições
+ */
 class Requisicao
 {
 	private $classe;
@@ -13,6 +16,10 @@ class Requisicao
 		self::chamaObjeto();
 	}
 
+	/**
+	 * extrai os segmentos da url da requisição
+	 * @param url da requisição
+	 */
 	private function ExtraiSegmentos( $uri )
 	{
 		try {
@@ -23,6 +30,10 @@ class Requisicao
 		}
 	}
 
+	/**
+	 * Pega a classe e o metodo que será utilizado na requisição
+	 * @param recebe a rota
+	 */
 	private function extraiRota( $rota )
 	{
 		try {
@@ -34,8 +45,12 @@ class Requisicao
 		}
 	}
 
-	private function chamaObjeto() {
-
+	/**
+	 * cria a estancia da classe
+	 * e chama o metodo que será utilizado
+	 */
+	private function chamaObjeto()
+	{
 		try {
 			if (method_exists($this->classe, $this->metodo))
 			{

@@ -86,8 +86,6 @@ class UsuarioDAO extends BaseDAO
 			$dados['id']
       );
 
-      // var_dump($this->db->preparedQuery($this->db->prepare, $query->bind_param));exit;
-
       if ( $query->execute() )
    	{
    		$_SESSION["hashLogin"] = $hash;
