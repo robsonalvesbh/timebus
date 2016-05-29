@@ -7,7 +7,7 @@ myApp.controller("appCtrl", function ($scope, $http) {
     $scope.bus = [];
     $scope.horarios = [];
 
-    $http.get('http://localhost/Projetos/timebus/onibus')
+    $http.get('http://timebus.encontreumdoador.com.br/onibus')
         .success(function (response) {
             if (response.status == 200) {
                 $scope.bus = angular.fromJson(response.dados);
@@ -19,7 +19,7 @@ myApp.controller("appCtrl", function ($scope, $http) {
     $scope.getBus = function () {
         var linha = $scope.onibus.split(" - ");
 
-        $http.get('http://localhost/Projetos/timebus/onibus/' + linha[0])
+        $http.get('http://timebus.encontreumdoador.com.br/onibus/' + linha[0])
             .success(function (response) {
                 if (response.status == 200) {
                     $scope.horarios = angular.fromJson(response.dados.horarios);
@@ -79,7 +79,7 @@ myApp.controller("appCtrl", function ($scope, $http) {
 
         $http({
             method: 'POST',
-            url: 'http://localhost/Projetos/timebus/usuario/logar',
+            url: 'http://timebus.encontreumdoador.com.br/usuario/logar',
             data: {
                 email: $scope.email,
                 senha: $scope.senha
