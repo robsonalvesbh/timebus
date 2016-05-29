@@ -23,6 +23,7 @@ myApp.controller("appCtrl", function ($scope, $http) {
             .success(function (response) {
                 if (response.status == 200) {
                     $scope.horarios = angular.fromJson(response.dados.horarios);
+                    $('html,body').animate({scrollTop: '520px'},'slow');
                 }
             }).error(function () {
             console.error('Arquivo .JSON não encontrado!');
