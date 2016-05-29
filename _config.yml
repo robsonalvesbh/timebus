@@ -10,8 +10,8 @@ title: TimeBus
 email: robsonalves.dev@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Todos os horários de onibus de sua cidade ao seu alcance.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://robsonalvesbh.github.io/timebus" # the base hostname & protocol for your site
+baseurl: "/timebus" # the subpath of your site, e.g. /blog
+url: "http://robsonalvesbh.github.io" # the base hostname & protocol for your site
 github_username:  timebus
 
 # Build settings
