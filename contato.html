@@ -10,6 +10,7 @@ layout: default
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li ng-if="!user.nome"><a href="login.html" class="button">Login</a></li>
+							<li ng-if="!user.nome"><a href="cadastro.html" class="button">Cadastro</a></li>
 							<li ng-if="user.nome">
 								<a href="#">[[user.nome]]</a>
 								<ul>

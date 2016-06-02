@@ -5,16 +5,17 @@ layout: default
     <div>
         <!-- Header -->
         <header id="header" class="alt">
-            <!-- <h1><a href="index.html">Alpha</a> by HTML5 UP</h1> -->
+            <h1><a href="index.html">TimeBus</a></h1>
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li ng-if="!user.nome"><a href="login.html" class="button">Login</a></li>
+                    <li ng-if="!user.nome"><a href="cadastro.html" class="button">Cadastro</a></li>
                     <li ng-if="user.nome">
                         <a href="#">[[user.nome]]</a>
                         <ul>
-                            <li><a href="#" ng-click="logout()">Sair</a></li>
+                            <li><a href="#" ng-click="deslogar()">Sair</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -13,7 +13,7 @@ myApp.controller("appCtrl", function ($scope, $http) {
                 $scope.bus = angular.fromJson(response.dados);
             }
         }).error(function () {
-        console.error('Arquivo .JSON não encontrado!')
+        console.error('Arquivo .JSON não encontrado!');
     });
 
     $scope.getBus = function () {
@@ -23,7 +23,7 @@ myApp.controller("appCtrl", function ($scope, $http) {
             .success(function (response) {
                 if (response.status == 200) {
                     $scope.horarios = angular.fromJson(response.dados.horarios);
-                    $('html,body').animate({scrollTop: '520px'},'slow');
+                    $('html,body').animate({scrollTop: '520px'}, 'slow');
                 }
             }).error(function () {
             console.error('Arquivo .JSON não encontrado!');
@@ -72,28 +72,68 @@ myApp.controller("appCtrl", function ($scope, $http) {
     $scope.user = [];
     $scope.user = angular.fromJson(localStorage.getItem("TBClienteDados"));
 
-    $scope.logar = function () {
+    $scope.logar = function (login) {
 
         var transform = function (data) {
             return $.param(data);
-        }
+        };
 
         $http({
             method: 'POST',
             url: 'http://timebus.encontreumdoador.com.br/usuario/logar',
             data: {
-                email: $scope.email,
-                senha: $scope.senha
+                email: login.email,
+                senha: login.senha
             },
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             transformRequest: transform
         }).success(function (response) {
-            if (typeof(Storage) !== "undefined") {
-                localStorage.setItem("TBClienteDados", angular.toJson(response.dados));
-            } else {
-                alert("Encontramos um erro em seu Browser, utilize uma versão mais recente ou outro browser");
+
+            if (response.status == 200) {
+                if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem("TBClienteDados", angular.toJson(response.dados));
+                } else {
+                    alert("Encontramos um erro em seu Browser, utilize uma versão mais recente ou outro browser");
+                }
+                location.href = 'index.html';
+            }
+        }, function errorCallback(response) {
+            alert("Dados incorretos");
+        });
+    }
+
+    $scope.deslogar = function () {
+        localStorage.removeItem('TBClienteDados');
+        location.reload();
+    }
+
+    $scope.cadastrar = function (cadastro) {
+
+        var transform = function (data) {
+            return $.param(data);
+        };
+
+        $http({
+            method: 'POST',
+            url: 'http://timebus.encontreumdoador.com.br/usuario/cadastrar',
+            data: {
+                nome: cadastro.nome,
+                email: cadastro.email,
+                senha: cadastro.senha
+            },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            transformRequest: transform
+        }).success(function (response) {
+            if (response.status == 200) {
+                if (typeof(Storage) !== "undefined") {
+                    location.href = 'login.html';
+                } else {
+                    alert("Encontramos um erro em seu Browser, utilize uma versão mais recente ou outro browser");
+                }
             }
         }, function errorCallback(response) {
             alert("Dados incorretos");

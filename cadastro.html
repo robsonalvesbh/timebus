@@ -10,7 +10,7 @@ layout: default
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li ng-if="!user.nome"><a href="cadastro.html" class="button">Cadastro</a></li>
+                <li ng-if="!user.nome"><a href="login.html" class="button">Login</a></li>
                 <li ng-if="user.nome">
                     <a href="#">[[user.nome]]</a>
                     <ul>
@@ -24,25 +24,31 @@ layout: default
     <!-- Main -->
     <section id="main" class="container 50%" style="margin-top: 10px;">
         <header ng-if="!user.nome" style="margin-bottom: 0px;">
-            <h2>Acesse sua conta</h2>
+            <h2>Crie sua conta</h2>
         </header>
         <div class="box">
 
-            <form method="post" ng-submit="logar(login)" ng-if="!user.nome">
+            <form method="post" ng-submit="cadastrar(cadastro)" ng-if="!user.nome">
                 <div class="row uniform 50%">
                     <div class="12u">
-                        <input type="text" name="email" ng-model="login.email" placeholder="Email"/>
+                        <input type="text" name="nome" ng-model="cadastro.nome" placeholder="Nome"/>
+                    </div>
+                </div>
+
+                <div class="row uniform 50%">
+                    <div class="12u">
+                        <input type="text" name="email" ng-model="cadastro.email" placeholder="Email"/>
                     </div>
                 </div>
                 <div class="row uniform 50%">
                     <div class="12u">
-                        <input type="password" name="senha" ng-model="login.senha" placeholder="Senha"/>
+                        <input type="password" name="senha" ng-model="cadastro.senha" placeholder="Senha"/>
                     </div>
                 </div>
                 <div class="row uniform">
                     <div class="12u">
                         <ul class="actions align-center">
-                            <li><input type="submit" value="Fazer login"/></li>
+                            <li><input type="submit" value="Cadastrar"/></li>
                         </ul>
                     </div>
                 </div>
